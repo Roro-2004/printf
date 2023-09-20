@@ -13,11 +13,13 @@
 int _printf(const char *format, ...)
 {
 	char found[] = {'%', 'c', 's', 'd', 'i'}, *ptr;
-	int co = 0, temp, temp2;
+	int co = 0;
 	va_list a;
 
 	va_start(a, format);
-	if (!format || (format[0] == '%' && !format[1]) || (format[0] == '%' && format[1] == ' ' && !format[2]))
+	if (!format || (format[0] == '%' && !format[1]))
+	return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
 	return (-1);
 	for (ptr = (char *)format; *ptr != '\0'; ptr++)
 	{
@@ -40,8 +42,8 @@ int _printf(const char *format, ...)
 				co += put(va_arg(a, char *)); }
 			else if (*ptr == found[3] || *ptr == found[4])
 			{
-
-			}		 
+				co += putnum(va_arg(a, int));
+			}
 	}
-					va_end(a);
-					return (co); }
+	va_end(a);
+	return (co); }

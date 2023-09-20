@@ -9,6 +9,7 @@ int _strlen(char *s);
 int _printf(const char *format, ...);
 int _putchar2(char r);
 int put(char *);
-void putnum(int n);
+int putnum(int n);
+int count(int n);
 
 #endif
