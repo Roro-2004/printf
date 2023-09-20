@@ -1,7 +1,7 @@
 #include<unistd.h>
 #include"main.h"
 /**
- * putchar2 - a func that prints a char
+ * _putchar2 - a func that prints a char
  * @s: a string
  * Return: a char
 */

@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 					co++; }
 					else if (*ptr == found[2])
 					{
-						co += put(va_arg(a, char *));} }
+						co += put(va_arg(a, char *)); } }
 						va_end(a);
 						return (co);
 }

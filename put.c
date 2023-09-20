@@ -2,7 +2,7 @@
 #include<unistd.h>
 /**
  * put - a func that prints string
- * @s: string
+ * @r: string
  * Return: str len
 */
 int put(char *r)
