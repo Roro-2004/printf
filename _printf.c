@@ -17,11 +17,8 @@ int _printf(const char *format, ...)
 	va_list a;
 
 	va_start(a, format);
-	if (!format || (format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && !format[1]) || (format[0] == '%' && format[1] == ' ' && !format[2]))
 	return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	return (-1);
-
 	for (ptr = (char *)format; *ptr != '\0'; ptr++)
 	{
 		if (*ptr != '%')
@@ -43,12 +40,8 @@ int _printf(const char *format, ...)
 				co += put(va_arg(a, char *)); }
 			else if (*ptr == found[3] || *ptr == found[4])
 			{
-				temp = va_arg(a, int);
-				temp2 = temp;
-				while (temp != 0)
-				{
-					temp /= 10;
-					co++; }
-					putnum(temp2); }}
+
+			}		 
+	}
 					va_end(a);
 					return (co); }
