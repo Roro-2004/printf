@@ -12,9 +12,8 @@
 
 int _printf(const char *format, ...)
 {
-	char found[] = {'%', 'c', 's', 'd', 'i'};
-	int co = 0, temp;
-	char *ptr;
+	char found[] = {'%', 'c', 's', 'd', 'i'}, *ptr;
+	int co = 0, temp, temp2;
 	va_list a;
 
 	va_start(a, format);
@@ -45,10 +44,11 @@ int _printf(const char *format, ...)
 			else if (*ptr == found[3] || *ptr == found[4])
 			{
 				temp = va_arg(a, int);
+				temp2 = temp;
 				while (temp != 0)
 				{
 					temp /= 10;
 					co++; }
-					putnum(va_arg(a, int)); }}
+					putnum(temp2); }}
 					va_end(a);
 					return (co); }
