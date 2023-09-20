@@ -9,9 +9,12 @@ int put(char *r)
 {
 	int i;
 
+	if (r)
+	{
 	for (i = 0; r[i]; i++)
 	{
 		_putchar2(r[i]);
+	}
 	}
 	return (i);
 }
