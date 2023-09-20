@@ -4,10 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
-int _strlen (char *s);
+int _strlen(char *s);
 int _printf(const char *format, ...);
-int putchh(char r);
-int put(char *r);
+int _putchar2(char r);
+int put(char *);
 
 #endif
