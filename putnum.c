@@ -11,6 +11,12 @@ int putnum(int n)
 {
 	int num = n;
 
+	if (num == int_minn)
+	{
+		_putchar2('-');
+		int_min(num);
+		return (count(n));
+	}
 	if (n < 0)
 	{
 	_putchar2('-');
