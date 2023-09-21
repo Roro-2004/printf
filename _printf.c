@@ -12,7 +12,7 @@
 
 int _printf(const char *format, ...)
 {
-	char found[] = {'%', 'c', 's', 'd', 'i'}, *ptr;
+	char found[] = {'%', 'c', 's', 'd', 'i', 'u', 'o', 'x', 'X', 'p'}, *ptr;
 	int co = 0;
 	va_list a;
 
@@ -38,18 +38,16 @@ int _printf(const char *format, ...)
 				_putchar2(va_arg(a, int));
 				co++; }
 			else if (*ptr == found[2])
-			{
-				co += put(va_arg(a, char *)); }
+				co += put(va_arg(a, char *));
 			else if (*ptr == found[3] || *ptr == found[4])
-			{
 				co += putnum(va_arg(a, int));
-			}
+			else if (*ptr == found[5])
+				co += putnum(va_arg(a, int));
 			else
 			{
 				_putchar2('%');
 				_putchar2(*ptr);
-				co += 2;
-			}
+				co += 2; }
 	}
 	va_end(a);
 	return (co); }

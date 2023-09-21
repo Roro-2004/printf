@@ -14,5 +14,6 @@ int put(char *);
 int putnum(int n);
 int count(int n);
 void int_min(int n);
+int unsign(int n);
 
 #endif
