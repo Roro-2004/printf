@@ -44,6 +44,12 @@ int _printf(const char *format, ...)
 			{
 				co += putnum(va_arg(a, int));
 			}
+			else
+			{
+				_putchar2('%');
+				_putchar2(*ptr);
+				co += 2;
+			}
 	}
 	va_end(a);
 	return (co); }
